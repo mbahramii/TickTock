@@ -7,12 +7,45 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/992/992700.png" type="image/png">
 </head>
 <body>
+    <div id="alarmpage" style="display:none;">
+        <div id="alarm"></div>
+    </div>
+
+    <div id="clockpage" style="display:none;">
+        <div id="clock"></div>
+    </div>
+
+    <div id="timerpage" style="display:none;">
+        <div id="timer">
+            Lorem, ipsum dolor.
+        </div>
+    </div>
+
+    <div id="stopwatchpage" style="display:none;">
+        <div id="stopwatch">
+            <h1 id="displaytimer"> 00:00:00</h1>
+        </div>
+    </div>
+
+
     <nav>
         <button onclick="showPage('alarm')">هشدار</button>
         <button onclick="showPage('clock')">ساعت</button>
         <button onclick="showPage('timer')">تایمر</button>
         <button onclick="showPage('stopwatch')">کرنومتر</button>
     </nav>
+
+    <script>
+
+        function showPage(page) {   
+            const pages = ['stopwatchpage' , 'clockpage' , 'timerpage' , 'alarmpage']
+
+            pages.forEach(id => {
+                document.getElementById(id).style.display = (id === page + 'page') ? 'block' : 'none' ;  
+
+            })}
+    </script>
 </body>
+
 
 </html>
