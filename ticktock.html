@@ -12,14 +12,22 @@
     </div>
 
     <div id="clockpage" style="display:block;" >
-        <div id="clock">  cock </div>
+        <div id="clock">  clock </div>
     </div>
 
-    <div id="timerpage" style="display:none;" >
-        <div id="timer">
-            Lorem, ipsum dolor.
+
+    <div id="timerrpage" style="display:none;" >
+        <div id="timerr" >
+            23:59:59
         </div>
+            <button onclick="startCountdown()" id="crButton"> start</button>
+            <div id="buttonsContaine" style="display: none;">
+                <button id="stoptimer" onclick="startCountdown()">stop</button>
+                <button id="removetimer" onclick="removetimer()"> remove</button>
+            </div>
     </div>
+
+
 
     <div id="stopwatchpage" style="display:none;" >
             <div class="stopwatch" id="stopwatch"> 00:00:00</div>
@@ -33,70 +41,11 @@
     <nav>
         <button onclick="showPage('alarm')">هشدار</button>
         <button onclick="showPage('clock')">ساعت</button>
-        <button onclick="showPage('timer')">تایمر</button>
+        <button onclick="showPage('timerr')">تایمر</button>
         <button onclick="showPage('stopwatch')">کرنومتر</button>
     </nav>
 
-    <script>
-
-        // toggle between page  
-        function showPage(page) {   
-            const pages = ['stopwatchpage' , 'clockpage' , 'timerpage' , 'alarmpage']
-
-            pages.forEach(id => {
-                document.getElementById(id).style.display = (id === page + 'page') ? 'block' : 'none' ;  
-
-            })}
-
-        //  stopwatch section    
-        let time = 0 ;
-        let timer = null ; 
-
-        const timerElement = document.getElementById("stopwatch");
-
-        const startStopButton =  document.getElementById('startstop');
-        
-        // formdata time  
-        const formatdate = (seconds) => {
-
-            hours = String(Math.floor(seconds / 3600 )).padStart(2, '0')
-            minute = String(Math.floor((seconds % 3600 )/60)).padStart(2, '0')
-            sec = String(Math.floor(seconds % 60 )).padStart(2, '0')
-
-            return `${hours}:${minute}:${sec}`
-        }
-
-        //  Condition for start, stop, and continue
-        const startTimer =()=> {
-
-            if (timer) {
-                clearInterval(timer)
-                timer = null ;
-                startStopButton.textContent = 'continue'
-            }
-            else {
-                timer = setInterval (() =>{
-                    time++
-                    timerElement.textContent = formatdate(time)
-                } , 1000)
-                startStopButton.textContent = 'stop'
-            }
-        }
-
-        // reset stopwatch
-        const resetTimer = () =>{
-            clearInterval(timer)
-            time  = 0 ;
-            timer = null;
-            timerElement.textContent = formatdate(time)
-
-            startStopButton.textContent = 'start'
-        }
-
-        
-
+    <script src="ticktock.js">
 </script>
 </body>
-
-
 </html>
