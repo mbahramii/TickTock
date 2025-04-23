@@ -6,7 +6,10 @@
             document.getElementById(id).style.display = (id === page + 'page') ? 'block' : 'none' ;  
 
         })}
-       
+    
+
+
+
        //  stopwatch section    
         let time = 0 ;
         let timer = null ; 
@@ -53,13 +56,17 @@
         }
 
 
+
+
+
+
          //  timer section           
         let seconds = 86399 ; 
 
         // countinue & remove button 
         const crButton = document.getElementById('crButton')
-        const stoptimer= document.getElementById('stoptimer')
 
+        const stoptimer= document.getElementById('stoptimer')
         const timerElement = document.getElementById('timerr') 
 
         const formatdatetimer =(seconds)=>{
@@ -67,10 +74,10 @@
             const minute = String(Math.floor((seconds % 3600 )/60)).padStart(2, '0')
             const sec = String(seconds % 60 ).padStart(2, '0')
             
-            
             return `${hours}:${minute}:${sec}`
         }
         
+        // function for start timer
         const startCountdown= () =>{  
     
             if(timer){
@@ -86,7 +93,7 @@
                 },1000)};
             }
 
-            
+            // remove and add stop & continue buttons 
             document.getElementById('crButton').addEventListener('click' , function(){
                 let buttonstarttimer = document.getElementById('crButton')
                 let buttonsContaine = document.getElementById('buttonsContaine')
@@ -99,6 +106,7 @@
         }      
         })
         
+        // remove and add remove button 
         const removetimer = () => {
             clearInterval(timer)
             seconds = 86399
@@ -116,4 +124,23 @@
             buttonstarttimer.style.display= 'block' ;
         }  
         }    
+
+
+
+        // clock section 
+
+        const updateClock = () => {
+            const now = new Date() ; 
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`
+        }
+
+        // calling function 
+
+        setInterval(updateClock , 1000);
+        updateClock() ;
         
