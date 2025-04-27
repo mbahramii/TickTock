@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TickTock</title>
+    <link rel="stylesheet" href="./ticktock.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/992/992700.png" type="image/png">
 </head>
 <body>
-    <div id="alarmpage">
-        <div id="alarm"></div>
-    </div>
-
-    <div id="clockpage" style="display:block;" >
-        <div id="clock" > </div>
-    </div>
-
-
-    <div id="timerrpage" style="display:none;" >
-        <div id="timerr" >
-            23:59:59
+    <div class="countainer_pages">
+        <div id="alarmpage">
+            <div id="alarm"></div>
         </div>
-            <button onclick="startCountdown()" id="crButton"> start</button>
-            <div id="buttonsContaine" style="display: none;">
-                <button id="stoptimer" onclick="startCountdown()">stop</button>
-                <button id="removetimer" onclick="removetimer()"> remove</button>
+    
+        <div id="clockpage" style="display:block;" >
+            <div id="clock" > </div>
+        </div>
+    
+    
+        <div id="timerrpage" style="display:none;" >
+            <div id="timerr" >
+                23:59:59
             </div>
-    </div>
+                <button onclick="startCountdown()" id="crButton"> start</button>
+                <div id="buttonsContaine" style="display: none;">
+                    <button id="stoptimer" onclick="startCountdown()">stop</button>
+                    <button id="removetimer" onclick="removetimer()"> remove</button>
+                </div>
+        </div>
+    
+     
+    
+        <div id="stopwatchpage" style="display:none;" >
+                <div class="stopwatch" id="stopwatch"> 00:00:00</div>
+                <div class="stopwatch_buttons">
+                    <button class="stopwatch_button" onclick="startTimer()" id="startstop">START</button>
+                    <button class="stopwatch_button" onclick="resetTimer()">RESET</button>
+                </div>
+        </div>
 
 
+    </div>    
 
-    <div id="stopwatchpage" style="display:none;" >
-            <div class="stopwatch" id="stopwatch"> 00:00:00</div>
-            <div class="buttons">
-                <button class="button" onclick="startTimer()" id="startstop">START</button>
-                <button class="button" onclick="resetTimer()">RESET</button>
-            </div>
-    </div>
-
-
-    <nav>
+    <nav class="countainer_buttons">
         <button onclick="showPage('alarm')">هشدار</button>
         <button onclick="showPage('clock')">ساعت</button>
         <button onclick="showPage('timerr')">تایمر</button>
