@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 button {
@@ -12,10 +13,13 @@ button {
     height: 30px;
     border: 0px ;
     border-radius: 10px;
+ background-color: rgb(205, 207, 207);
+}
 
 }
 
 .countainer_pages{
+    width: 300px;
     height: 300px;
     display: flex;
     flex-direction: row;
@@ -31,4 +35,32 @@ button {
     justify-content: center;
     align-items: end;
     gap: 20px;
+}
+
+.stopwatch {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+}
+
+.stopwatch_buttons {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    gap: 3px;
+}
+.stopwatch_button {
+    width:90px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(205, 207, 207);
+}
+
+.stopwatch_button:hover{
+    background-color: rgb(17, 143, 159);
 }
