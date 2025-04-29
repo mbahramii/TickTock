@@ -139,3 +139,34 @@
         setInterval(updateClock , 1000);
         updateClock() ;
         
+
+
+        // alarm section 
+        let alarmTimer ;
+
+        const setAlarm = ()=>{
+            const alarmTime = document.getElementById('alarmtime').value
+            const status = document.getElementById('status')
+
+            if(!alarmTime){
+                status.textContent = "لطفاً یک زمان انتخاب کنید"
+            return 
+            }
+
+            status.textContent = "الارم تنظیم شد برای ساعت " + alarmTime;
+            
+            clearInterval(alarmTimer)
+
+            alarmTimer = setInterval(() => {
+                const now = new Date();
+                const currentTime = now.getHours().toString().padStart(2 , "0")
+                + ":" + now.getMinutes().toString().padStart(2 , "0")
+                
+                if(currentTime === alarmTime){
+                    clearInterval(alarmTimer)
+                    
+                    // document.getElementById('audi').play()
+                    alert("الارم زمان رسید ")
+                }
+            } , 1000)
+        }
