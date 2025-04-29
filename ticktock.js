@@ -55,11 +55,6 @@
             startStopButton.textContent = 'start'
         }
 
-
-
-
-
-
          //  timer section           
         let seconds = 86399 ; 
 
@@ -96,7 +91,7 @@
             // remove and add stop & continue buttons 
             document.getElementById('crButton').addEventListener('click' , function(){
                 let buttonstarttimer = document.getElementById('crButton')
-                let buttonsContaine = document.getElementById('buttonsContaine')
+                let buttonsContaine = document.getElementById('timerrbuttons')
             if(buttonsContaine.style.display === 'none' || buttonsContaine.style.display === '' ){
             buttonsContaine.style.display = 'block';
             buttonstarttimer.style.display= 'none' ;
@@ -115,7 +110,7 @@
             crButton.textContent = 'start'
 
             let buttonstarttimer = document.getElementById('crButton')
-            let buttonsContaine = document.getElementById('buttonsContaine')
+            let buttonsContaine = document.getElementById('timerrbuttons')
             if(buttonsContaine.style.display === 'block' ){
             buttonsContaine.style.display = 'none';
             buttonstarttimer.style.display= 'block' ;

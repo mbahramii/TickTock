@@ -9,23 +9,28 @@
 <body>
     <div class="countainer_pages">
         <div id="alarmpage">
-            <div id="alarm"></div>
+            <div id="alarm">
+                <div><input type="time" class="display_alarm_time" id="alarmtime"></div>
+                <button onclick="setAlarm()" class="setalarm" ></button>
+            </div>
         </div>
     
         <div id="clockpage" style="display:block;" >
-            <div id="clock" > </div>
+            <div class="clock" id="clock" > </div>
         </div>
     
     
-        <div id="timerrpage" style="display:none;" >
-            <div id="timerr" >
+        <div class="timerrpage" id="timerrpage" style="display:none;" >
+            <div class="timerr" id="timerr" >
                 23:59:59
             </div>
-                <button onclick="startCountdown()" id="crButton"> start</button>
-                <div id="buttonsContaine" style="display: none;">
-                    <button id="stoptimer" onclick="startCountdown()">stop</button>
-                    <button id="removetimer" onclick="removetimer()"> remove</button>
-                </div>
+
+            <button class="starttimer" onclick="startCountdown()" id="crButton"> start</button>
+           
+            <div class="timerrbuttons" id="timerrbuttons" >
+                    <button class="stoptimer" id="stoptimer" onclick="startCountdown()">stop</button>
+                    <button class="removetimer" id="removetimer" onclick="removetimer()"> remove</button>
+            </div>
         </div>
     
      
@@ -41,7 +46,7 @@
 
     </div>    
 
-    <nav class="countainer_buttons">
+    <nav class="countainer_pages_buttons">
         <button onclick="showPage('alarm')">هشدار</button>
         <button onclick="showPage('clock')">ساعت</button>
         <button onclick="showPage('timerr')">تایمر</button>
