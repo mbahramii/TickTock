@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+    margin: auto;
 }
 
 button {
@@ -13,9 +13,8 @@ button {
     height: 30px;
     border: 0px ;
     border-radius: 10px;
- background-color: rgb(205, 207, 207);
-}
-
+    background-color: rgb(205, 207, 207);
+    margin: 0px;
 }
 
 .countainer_pages{
@@ -28,7 +27,7 @@ button {
 
 }
 
-.countainer_buttons {
+.countainer_pages_buttons{
     height: 300px;
     display: flex;
     flex-direction: row;
@@ -63,4 +62,57 @@ button {
 
 .stopwatch_button:hover{
     background-color: rgb(17, 143, 159);
+}
+
+
+.timerr{
+    width: 178px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+}
+
+.starttimer{
+    width:100px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 38px;
+    background-color: rgb(205, 207, 207);
+}
+
+.timerrbuttons {
+    width: 178px;
+    height: 100px;
+    display: none;
+
+}
+
+.stoptimer{
+    width:90px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(205, 207, 207);
+    margin: 1PX;
+}
+
+.removetimer{
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(205, 207, 207);
+    margin: 1PX;
+
+}
+
+.clock {
+    font-size: 60px
 }
